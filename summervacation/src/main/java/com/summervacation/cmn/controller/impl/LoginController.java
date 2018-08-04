@@ -13,7 +13,7 @@ public class LoginController implements ILoginController {
 	@Override
 	public String index() {
 	
-		log.debug("인덱스");
+		log.debug("인덱스44");
 		return "/common/index.jsp";
 	}
 
