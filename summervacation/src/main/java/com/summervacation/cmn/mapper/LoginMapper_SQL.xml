@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.summervacation.cmn.mapper.LoginMapper">
+
+	<!-- 로그인권한조회 -->
+    <select id="getLoginAuth" resultType="java.util.HashMap">
+	SELECT EMP_NO
+	     , LOGIN_ID
+	     , LOGIN_PWD
+	     , USER_NM
+	     , FRONT_REG_NO
+	     , GENDER
+	     , MARR_YN
+	     , TEL_NUM
+	     , EMAIL
+	     , DEPT_CD
+	     , GRADE_CD
+	     , FST_REG_DTTM
+	     , FST_RGST_ENO
+	     , LST_CHG_DTTM
+	     , LST_CHG_ENO
+	  FROM TB_M0000
+    </select>
+    
+</mapper>
