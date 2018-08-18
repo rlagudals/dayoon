@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.summervacation.cmn.controller.ILoginController;
+import com.summervacation.cmn.model.TB0000;
 import com.summervacation.cmn.service.LoginService;
 
 import lombok.extern.log4j.Log4j;
@@ -30,25 +31,28 @@ public class LoginController implements ILoginController {
 	}
 
 	@Override
-	public @ResponseBody HashMap<String, Object> loginProc(@RequestBody HashMap<String, String> inputMap) {
+	public @ResponseBody TB0000 loginProc(@RequestBody TB0000 inputTB0000) {
 
-		HashMap<String, Object> returnMap = new HashMap<String, Object>();
+		TB0000 returnTB0000 = new TB0000();
 
+		
 		log.debug("loginProc 호출");
-		log.debug("인풋파라메터 " + inputMap.toString());
+		log.debug("인풋파라메터 " + inputTB0000.toString());
+		
+		returnTB0000 = loginService.loginProc(inputTB0000);
 
-		returnMap = loginService.loginProc(inputMap);
-
-		if (returnMap != null) {
-			returnMap.put("sccYn", "Y");
-			returnMap.put("resultMsg", "로그인성공");
+		if (returnTB0000 != null) {
+			
+			returnTB0000.setSccYn("Y");
+			returnTB0000.setResultMsg("로그인성공");
+			
 		} else {
-			returnMap = new HashMap<String, Object>();
-			returnMap.put("sccYn", "N");
-			returnMap.put("resultMsg", "로그인실패");
+			returnTB0000 = new TB0000();
+			returnTB0000.setSccYn("N");
+			returnTB0000.setResultMsg("로그인실패");
 		}
 
-		return (HashMap<String, Object>) returnMap;
+		return returnTB0000;
 	}
 
 	@Override
