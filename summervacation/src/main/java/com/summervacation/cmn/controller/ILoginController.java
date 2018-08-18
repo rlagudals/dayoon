@@ -5,6 +5,8 @@ import java.util.HashMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.summervacation.cmn.model.TB0000;
+
 public interface ILoginController {
 
 	/*
@@ -17,7 +19,7 @@ public interface ILoginController {
 	 * 사용자의 아이디와 패쓰워드가 입력되어다면 로그인 프로세스를 진행한다.
 	 */
 	@RequestMapping(value = "/loginProc")
-	public HashMap<String, Object> loginProc(HashMap<String, String> inputMap);
+	public TB0000 loginProc(TB0000 inputTB0000);
 
 	/*
 	 * 회원가입을 위해서 팝업창을 띄운다.

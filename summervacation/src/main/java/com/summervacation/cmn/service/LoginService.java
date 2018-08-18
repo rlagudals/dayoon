@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.summervacation.cmn.mapper.LoginMapper;
+import com.summervacation.cmn.model.TB0000;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -18,9 +19,9 @@ public class LoginService {
 	private LoginMapper loginMapper;
 
 	//로그인 처리
-	public HashMap<String, Object> loginProc(HashMap<String, String> param) {
+	public TB0000 loginProc(TB0000 inputTB0000) {
 		
-		return (HashMap<String, Object>) loginMapper.getLoginAuth(param);
+		return loginMapper.getLoginAuth(inputTB0000);
 	}	
 
 }

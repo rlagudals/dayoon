@@ -19,11 +19,10 @@
 <script>
 	function fn_login() {	
 		
-		var id = $("[id=loginId]").val();
-		var pwd = $("[id=loginPwd]").val();
+		var loginId = $("[id=loginId]").val();
+		var loginPwd = $("[id=loginPwd]").val();
 		
-		var inputData =  { "id" : id, "passwd" : pwd };
-		console.log(inputData);
+		var inputData =  { "loginId" : loginId, "loginPwd" : loginPwd };
 		
 		// ILoginController.loginProc
 		 $.ajax({
@@ -33,18 +32,17 @@
 				url : "/loginProc",
 				data : JSON.stringify(inputData),
 				success : function(data){		
-					
+					console.log(data);
 					console.log(data.sccYn);
 					console.log(data.resultMsg);
 					
-					
 					if(data.sccYn == "Y"){
-						alert("정상로그인입니다.");
+						alert(data.userNm + "님 환영합니다");
 					}else{
 						alert("사용자가 가입안되있거나 비밀번호가 잘못되었습니다");
 					}
+// 					location.replace("http://www.daum.net");
 					
-// 					location.replace("http://www.daum.net");				
 // 					if(data == 1){
 // 						alert('퇴사자는 로그인이 불가합니다');						
 // 					}else if(data == 2){							
@@ -63,8 +61,8 @@
 		//location.replace("http://www.daum.net");
 	}
 
-	function fn_userReg() {
-		
+	function funcM() {
+		alert();
 	}
 </script>
 <body>
@@ -92,9 +90,8 @@
 			<input type="button" value="로그인" onclick="fn_login();"></input>		
 		</td>
 		<td>
-			<input type="button" value="회원가입" onclick="fn_userReg();"></input>		
+			<input type="button" value="확인" onclick="funcM();"></input>		
 		</td>	
-	</tr>
 </table>
 </div>
 </body>
