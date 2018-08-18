@@ -17,7 +17,7 @@ public interface ILoginController {
 	 * 사용자의 아이디와 패쓰워드가 입력되어다면 로그인 프로세스를 진행한다.
 	 */
 	@RequestMapping(value = "/loginProc")
-	public HashMap<String, String> loginProc(HashMap<String, String> inputMap);
+	public HashMap<String, Object> loginProc(HashMap<String, String> inputMap);
 
 	/*
 	 * 회원가입을 위해서 팝업창을 띄운다.

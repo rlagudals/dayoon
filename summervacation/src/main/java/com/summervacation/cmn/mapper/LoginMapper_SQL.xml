@@ -7,7 +7,8 @@
 
 	<!-- 로그인권한조회 -->
     <select id="getLoginAuth" resultType="java.util.HashMap">
-	SELECT EMP_NO
+	SELECT 
+	       EMP_NO
 	     , LOGIN_ID
 	     , LOGIN_PWD
 	     , USER_NM
@@ -23,6 +24,9 @@
 	     , LST_CHG_DTTM
 	     , LST_CHG_ENO
 	  FROM TB_M0000
+	 WHERE 1 = 1
+	   AND LOGIN_ID = #{id}
+	   AND LOGIN_PWD = #{passwd}
     </select>
     
 </mapper>

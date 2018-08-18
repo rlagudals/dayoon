@@ -25,6 +25,7 @@
 		var inputData =  { "id" : id, "passwd" : pwd };
 		console.log(inputData);
 		
+		// ILoginController.loginProc
 		 $.ajax({
 				type : "POST",
 				dataType : "json",
@@ -32,9 +33,17 @@
 				url : "/loginProc",
 				data : JSON.stringify(inputData),
 				success : function(data){		
-					console.log("정상로그인");
-					console.log(data);
-					location.replace("http://www.daum.net");
+					
+					console.log(data.sccYn);
+					console.log(data.resultMsg);
+					
+					
+					if(data.sccYn == "Y"){
+						alert("정상로그인입니다.");
+					}else{
+						alert("사용자가 가입안되있거나 비밀번호가 잘못되었습니다");
+					}
+// 					location.replace("http://www.daum.net");
 					
 // 					if(data == 1){
 // 						alert('퇴사자는 로그인이 불가합니다');						

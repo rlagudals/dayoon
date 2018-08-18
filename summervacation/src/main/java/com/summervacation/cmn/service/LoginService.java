@@ -16,19 +16,11 @@ public class LoginService {
 
 	@Autowired
 	private LoginMapper loginMapper;
-	/**
-	 * 교육보고서 화면
-	 * 
-	 * @param model
-	 */
-	public void index() {
 
-		log.debug("index ------------------ @Service");
-		log.debug("index ------------------ @Service");
-		log.debug("index ------------------ @Service");
+	//로그인 처리
+	public HashMap<String, Object> loginProc(HashMap<String, String> param) {
 		
-		Map<String, String> param = new HashMap<String, String>();
-		loginMapper.getLoginAuth(param);
-	}
+		return (HashMap<String, Object>) loginMapper.getLoginAuth(param);
+	}	
 
 }
