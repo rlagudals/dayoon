@@ -43,8 +43,8 @@
 					}else{
 						alert("사용자가 가입안되있거나 비밀번호가 잘못되었습니다");
 					}
-// 					location.replace("http://www.daum.net");
 					
+// 					location.replace("http://www.daum.net");				
 // 					if(data == 1){
 // 						alert('퇴사자는 로그인이 불가합니다');						
 // 					}else if(data == 2){							
@@ -63,8 +63,8 @@
 		//location.replace("http://www.daum.net");
 	}
 
-	function funcM() {
-		alert();
+	function fn_userReg() {
+		
 	}
 </script>
 <body>
@@ -92,8 +92,9 @@
 			<input type="button" value="로그인" onclick="fn_login();"></input>		
 		</td>
 		<td>
-			<input type="button" value="확인" onclick="funcM();"></input>		
+			<input type="button" value="회원가입" onclick="fn_userReg();"></input>		
 		</td>	
+	</tr>
 </table>
 </div>
 </body>
