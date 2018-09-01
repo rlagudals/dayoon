@@ -49,8 +49,15 @@ public class CmnController implements ICmnController {
 
 	@Override
 	public String pageMove(@RequestParam String pn) {
+		log.debug("111111111111111111111111111111111");
 		// TODO Auto-generated method stub
 		return pn;
+	}
+
+	@Override
+	public String index() {
+		
+		return "/index.jsp";
 	}
 
 }

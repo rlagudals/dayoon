@@ -12,7 +12,7 @@ public interface ILoginController {
 	/*
 	 * 사원관리화면으로 이동하기 위한 컨트롤러
 	 */
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index();
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)

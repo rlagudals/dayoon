@@ -9,16 +9,10 @@
 <script type="text/javascript" src="../js/common/jquery-1.12.3.min.js"></script>
 
 <script>
-	function fn_login() {	
-		location.replace("../jsp/common/login.jsp");
-	}
+$(document).ready(function(){
+	location.replace("../jsp/common/login.jsp");
+});	
 </script>
 <body>
-<table> 
-	<tr>
-		<td>
-			<input type="button" value="로그인 화면 이동" onclick="fn_login();"></input>		
-		</td>	
-</table>
 </body>
 </html>
