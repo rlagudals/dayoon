@@ -18,8 +18,8 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class CmnController implements ICmnController {
 
-	@Autowired
-	private CmnService cmnService;
+//	@Autowired
+//	private CmnService cmnService;
 
 	// jsp 페이지 이동을 위한 페이지 컨트롤러
 	@Override
@@ -30,7 +30,7 @@ public class CmnController implements ICmnController {
 		 */
 
 		HashMap<String, String> returnMap = new HashMap<String, String>();
-		String url = WorksCmnConst.BLANK;
+		String url = ""; //WorksCmnConst.BLANK;
 
 		// 유효성 검사
 		if (inJson.isEmpty() || inJson == null) {
