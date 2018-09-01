@@ -14,10 +14,12 @@
 		border:2px solid #C98AFF;	
 	}
 </style>
-<script type="text/javascript" src="../js/common/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="/js/common/jquery-1.12.3.min.js"></script>
 <script>
-$(document).click(function fn_reg() {
+$(document).ready(function(){
 	
+	$('#btnReg').click(function(){			
+		
 		var userNm = $('[id=txtUserNm]').val();
 		var frontRegNo = $('[id=txtFrontRegNo]').val();
 		var gender = $('[id=cboGender]').val();
@@ -32,12 +34,13 @@ $(document).click(function fn_reg() {
 				          "loginId" : loginId, "loginPwd" : loginPwd, "email" : email,
 						  "telNum" : telNum, "deptCd" : deptCd, "gradeCd" : gradeCd };
 		
+	
 		$.ajax({ 
 			type : "POST",
 			dataType : "json",
 			contentType: 'application/json; charset=UTF-8', 
 			url : "/userRegProc",
-			data : inputInfo,
+			data : JSON.stringify(inputInfo),
 			success : function(data){		
 				
 				if(data.userRegCheck == "Y"){
@@ -50,8 +53,17 @@ $(document).click(function fn_reg() {
 				console.log("에러");			
 			}			
 			
-		});
-	});
+		});		
+	});		
+}); // document.ready	
+
+
+function aaa(){
+	
+	alert("1111111111");
+}
+
+
 </script>
 <body>
 <div>
@@ -121,7 +133,7 @@ $(document).click(function fn_reg() {
 		</td>		
 	</tr>
 	<tr>
-		<td><button id="btnReg">가입하기</button></td>
+		<td><input type="button" id="btnReg" value="가입하기"/></td>
 	</tr>
 	</table>
 </div>

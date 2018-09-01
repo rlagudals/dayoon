@@ -6,7 +6,7 @@
     </encoder>
   </appender>
 
-  <logger name="jdbc" level="OFF"/>
+  <logger name="jdbc" level="ON"/>
   <logger name="jdbc.sqlonly" level="DEBUG" additivity="false">>
     <appender-ref ref="STDOUT" />
   </logger>

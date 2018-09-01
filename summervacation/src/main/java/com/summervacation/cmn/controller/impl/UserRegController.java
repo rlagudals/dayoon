@@ -29,6 +29,8 @@ public class UserRegController implements IUserRegController {
 	// 회원가입
 	@Override
 	public @ResponseBody TB0000 userRegProc(@RequestBody TB0000 inputTB0000) {
+		
+		log.debug("userRegProc");
 
 		TB0000 returnNewInfo = new TB0000();
 		

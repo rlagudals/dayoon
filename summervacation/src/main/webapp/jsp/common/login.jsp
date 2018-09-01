@@ -53,7 +53,9 @@
 
 	// 회원가입
 	function fn_userReg() {
-		location.replace("../jsp/common/userreg.jsp");
+		console.log("fn_userReg()");
+		location.href = "/jsp/common/userreg.jsp";
+		//location.replace("../jsp/common/userreg.jsp");
 	}
 </script>
 <body>

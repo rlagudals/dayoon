@@ -12,7 +12,7 @@ public interface IUserRegController {
 	/*
 	 * 회원가입 진행.
 	 */
-	@RequestMapping(value = "/userRegProc",  method = RequestMethod.POST)
+	@RequestMapping(value = "/userRegProc")
 	public TB0000 userRegProc(TB0000 inputTB0000);
 
 }
