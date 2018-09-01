@@ -4,95 +4,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>첫화면</title>
 </head>
-<style>
-	div 
-	{ 
-		width:400px;
-		heigt:900px;
-		border:2px solid #FFB2D9;	
-	}
-</style>
 <script type="text/javascript" src="../js/common/jquery-1.12.3.min.js"></script>
 
 <script>
 	function fn_login() {	
-		
-		var loginId = $("[id=loginId]").val();
-		var loginPwd = $("[id=loginPwd]").val();
-		
-		var inputData =  { "loginId" : loginId, "loginPwd" : loginPwd };
-		
-		// ILoginController.loginProc
-		 $.ajax({
-				type : "POST",
-				dataType : "json",
-				contentType: 'application/json; charset=UTF-8', 
-				url : "/loginProc",
-				data : JSON.stringify(inputData),
-				success : function(data){		
-					console.log(data);
-					console.log(data.sccYn);
-					console.log(data.resultMsg);
-					
-					if(data.sccYn == "Y"){
-						alert(data.userNm + "님 환영합니다");
-					}else{
-						alert("사용자가 가입안되있거나 비밀번호가 잘못되었습니다");
-					}
-// 					location.replace("http://www.daum.net");
-					
-// 					if(data == 1){
-// 						alert('퇴사자는 로그인이 불가합니다');						
-// 					}else if(data == 2){							
-// 						location.href="/index";
-// 					}else if(data == 3){
-// 						alert('비밀번호를 확인해주세요');
-// 					}else if(data == 4){
-// 						alert('입력하신 아이디가 없습니다');
-// 					}
-				},
-				error : function(request,status,error){
-					console.log("에러");
-					
-				}			
-			});
-		//location.replace("http://www.daum.net");
-	}
-
-	function funcM() {
-		alert();
+		location.replace("../jsp/common/login.jsp");
 	}
 </script>
 <body>
-<h1>Login</h1>
-<div>
 <table> 
 	<tr>
 		<td>
-			<label>아이디</label>
-		</td>
-		<td>
-			<input type="text" id="loginId"></input>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<label>비밀번호</label>
-		</td>
-		<td>
-			<input type="password" id="loginPwd"></input>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<input type="button" value="로그인" onclick="fn_login();"></input>		
-		</td>
-		<td>
-			<input type="button" value="확인" onclick="funcM();"></input>		
+			<input type="button" value="로그인 화면 이동" onclick="fn_login();"></input>		
 		</td>	
 </table>
-</div>
 </body>
 </html>

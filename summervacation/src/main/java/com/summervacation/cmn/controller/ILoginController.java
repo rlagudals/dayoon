@@ -14,12 +14,15 @@ public interface ILoginController {
 	 */
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index();
-
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login();
+	
 	/*
-	 * 사용자의 아이디와 패쓰워드가 입력되어다면 로그인 프로세스를 진행한다.
+	 * 사용자의 아이디와 패스워드가 입력되어다면 로그인 프로세스를 진행한다.
 	 */
 	@RequestMapping(value = "/loginProc")
-	public TB0000 loginProc(TB0000 inputTB0000);
+	public TB0000 loginProc(TB0000 inputTB0000);	
 
 	/*
 	 * 회원가입을 위해서 팝업창을 띄운다.
@@ -28,7 +31,7 @@ public interface ILoginController {
 	public String singInPopUp();
 
 	/*
-	 * 회원가입완료후 확인버튼 클릭시 회원가입을 진행한다.
+	 * 회원가입 완료후 확인 버튼 클릭시 회원가입을 진행한다.
 	 */
 	@RequestMapping(value = "/singInUpRegUser", method = RequestMethod.POST)
 	public String singInUpRegUser();

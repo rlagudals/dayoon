@@ -29,6 +29,14 @@ public class LoginController implements ILoginController {
 
 		return "/common/index.jsp";
 	}
+	
+	@Override
+	public String login() {
+
+		log.debug("----> 로그인 화면");
+
+		return "/common/login.jsp";
+	}
 
 	@Override
 	public @ResponseBody TB0000 loginProc(@RequestBody TB0000 inputTB0000) {
@@ -54,7 +62,7 @@ public class LoginController implements ILoginController {
 
 		return returnTB0000;
 	}
-
+	
 	@Override
 	public String singInPopUp() {
 		// TODO Auto-generated method stub

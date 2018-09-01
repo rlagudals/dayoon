@@ -20,5 +20,4 @@ public class TB0000 extends CmnModel{
 	private String fstRgstEno;
 	private String lstChgDttm;
 	private String lstChgEno;
-	
 }
