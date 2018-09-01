@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.summervacation.cmn.mapper.UserRegMapper">
-    <select id="insertUserInfo" resultType="com.summervacation.cmn.model.TB0000">
+    <insert id="insertUserInfo">
     INSERT INTO TB_M0000 
     (
           EMP_NO
@@ -13,7 +13,6 @@
         , USER_NM
         , FRONT_REG_NO
         , GENDER
-        , MARR_YN
         , TEL_NUM
         , EMAIL
         , DEPT_CD
@@ -25,21 +24,20 @@
     )
     VALUES
     (
-          (SELECT EMP_NO + 1 AS EMP_NO FROM TB_M0000)
+          (SELECT DECODE(MAX(EMP_NO), '', 0, MAX(EMP_NO)) + 1 AS EMP_NO FROM TB_M0000)
         , #{loginId}
         , #{loginPwd}
         , #{userNm}
         , #{frontRegNo}
         , #{gender}
-        , #{marrYn}
         , #{telNum}
         , #{email}
         , #{deptCd}
         , #{gradeCd}
         , SYSDATE
-        , (SELECT EMP_NO + 1 AS EMP_NO FROM TB_M0000)
+        , (SELECT DECODE(MAX(EMP_NO), '', 0, MAX(EMP_NO)) + 1 AS EMP_NO FROM TB_M0000)
         , SYSDATE
-        , (SELECT EMP_NO + 1 AS EMP_NO FROM TB_M0000)   
+        , (SELECT DECODE(MAX(EMP_NO), '', 0, MAX(EMP_NO)) + 1 AS EMP_NO FROM TB_M0000)
      )
-    </select>    
+    </insert>    
 </mapper>

@@ -19,7 +19,7 @@ public class UserRegService {
 	private UserRegMapper userRegMapper;
 	
 	// 회원가입
-	public TB0000 userRegProc(TB0000 insertData) {
+	public int userRegProc(TB0000 insertData) {
 		
 		return userRegMapper.insertUserInfo(insertData);
 	}

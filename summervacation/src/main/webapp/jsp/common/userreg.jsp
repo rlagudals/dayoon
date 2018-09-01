@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>회원가입</title>
 </head>
 <style>
@@ -42,8 +42,8 @@ $(document).ready(function(){
 			url : "/userRegProc",
 			data : JSON.stringify(inputInfo),
 			success : function(data){		
-				
-				if(data.userRegCheck == "Y"){
+				console.log(data);
+				if(data.sccYn == "Y"){
 					alert(data.userNm + "님 회원가입이 완료되었습니다.");
 				}else{
 					alert("신규등록이 정상적으로 처리되지 않았습니다.");

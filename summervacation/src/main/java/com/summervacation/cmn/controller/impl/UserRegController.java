@@ -19,36 +19,34 @@ public class UserRegController implements IUserRegController {
 
 	@Autowired
 	UserRegService userRegService;
-	
+
 	@Override
 	public String userreg() {
 
 		return "/common/userreg.jsp";
 	}
-	
+
 	// 회원가입
 	@Override
 	public @ResponseBody TB0000 userRegProc(@RequestBody TB0000 inputTB0000) {
-		
-		log.debug("userRegProc");
 
+		int insertCnt = 0;
 		TB0000 returnNewInfo = new TB0000();
-		
-		log.debug("userReg 호출");
-		log.debug("신규등록 데이터 " + inputTB0000.toString());
-		
-		returnNewInfo = userRegService.userRegProc(inputTB0000);
 
-		if (returnNewInfo != null) {
-			
-			returnNewInfo.setUserRegCheck("Y");
-			returnNewInfo.setUserRegCheckMsg("insert 성공");
-			
+		log.debug("신규등록 데이터 " + inputTB0000.toString());
+
+		// insert 쿼리실행
+		insertCnt = userRegService.userRegProc(inputTB0000);
+		log.info("insert 건수 => " + insertCnt);
+		
+		if (insertCnt > 0) {
+			returnNewInfo.setUserNm(inputTB0000.getUserNm());
+			returnNewInfo.setSccYn("Y");
+			returnNewInfo.setResultMsg("insert 성공");
+
 		} else {
-			
-			returnNewInfo = new TB0000();
-			returnNewInfo.setUserRegCheck("N");
-			returnNewInfo.setUserRegCheckMsg("insert 실패");
+			returnNewInfo.setSccYn("N");
+			returnNewInfo.setResultMsg("insert 실패");
 		}
 
 		return returnNewInfo;
