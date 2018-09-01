@@ -16,7 +16,7 @@
 	}
 </style>
 
-<script type="text/javascript" src="../js/common/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="/js/common/jquery-1.12.3.min.js"></script>
 
 <script>
 	function fn_login() {	
@@ -34,12 +34,14 @@
 				url : "/loginProc",
 				data : JSON.stringify(inputData),
 				success : function(data){		
+					alert(data.userNm + "님 환영합니다");
 					console.log(data);
 					console.log(data.sccYn);
 					console.log(data.resultMsg);
-					
+					var data = {"page" : "mainpage"};
 					if(data.sccYn == "Y"){
 						alert(data.userNm + "님 환영합니다");
+
 					}else{
 						alert("사용자가 가입안되있거나 비밀번호가 잘못되었습니다");
 					}
